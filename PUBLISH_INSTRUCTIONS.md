@@ -3,7 +3,7 @@
 ## Step 1: Create GitHub Repository
 
 1. Go to GitHub and create a new repository:
-   - Repository name: `homebrew-tap` (or `homebrew-cli`)
+   - Repository name: `homebrew-svector`
    - Owner: `svector-corporation`
    - Description: "Official Homebrew tap for SVECTOR AI CLI tools"
    - Make it **Public**
@@ -12,8 +12,8 @@
 ## Step 2: Add Remote and Push
 
 ```bash
-# Add the GitHub remote (using homebrew-tap to avoid conflict with existing SVECTOR repo)
-git remote add origin https://github.com/svector-corporation/homebrew-tap.git
+# Add the GitHub remote
+git remote add origin https://github.com/svector-corporation/homebrew-svector.git
 
 # Push to GitHub
 git branch -M main
@@ -26,7 +26,7 @@ Once pushed, users worldwide can install SVECTOR CLI with:
 
 ```bash
 # Add the tap
-brew tap svector-corporation/tap
+brew tap svector-corporation/svector
 
 # Install SVECTOR CLI
 brew install svector
@@ -38,14 +38,14 @@ Users can also install directly without tapping:
 
 ```bash
 # Install directly from GitHub
-brew install svector-corporation/tap/svector
+brew install svector-corporation/svector/svector
 ```
 
 ## Repository Structure
 
 The public repository will contain:
 ```
-homebrew-tap/
+homebrew-svector/
 ├── Formula/
 │   └── svector.rb          # Main formula file
 ├── README.md               # Installation instructions
@@ -55,10 +55,10 @@ homebrew-tap/
 
 ## Important Notes
 
-1. **Naming Convention**: Repository MUST be named `homebrew-tap` (or similar) for Homebrew to recognize it as a tap
+1. **Naming Convention**: Repository MUST be named `homebrew-svector` for Homebrew to recognize it as a tap
 2. **Formula Location**: Formula MUST be in `Formula/` directory
 3. **Public Access**: Repository MUST be public for global access
-4. **GitHub URL**: Will be accessible at `https://github.com/svector-corporation/homebrew-tap`
+4. **GitHub URL**: Will be accessible at `https://github.com/svector-corporation/homebrew-svector`
 
 ## Post-Publication Commands
 
@@ -66,14 +66,14 @@ After publishing, users can install with:
 
 ```bash
 # Method 1: Via tap (recommended)
-brew tap svector-corporation/tap
+brew tap svector-corporation/svector
 brew install svector
 
 # Method 2: Direct install
-brew install svector-corporation/tap/svector
+brew install svector-corporation/svector/svector
 
 # Method 3: One-line install
-brew install https://raw.githubusercontent.com/svector-corporation/homebrew-tap/main/Formula/svector.rb
+brew install https://raw.githubusercontent.com/svector-corporation/homebrew-svector/main/Formula/svector.rb
 ```
 
 ## Formula Features
@@ -95,7 +95,7 @@ After publication, test with:
 brew uninstall svector
 
 # Install from GitHub
-brew tap svector-corporation/tap
+brew tap svector-corporation/svector
 brew install svector
 
 # Test CLI
