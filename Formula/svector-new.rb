@@ -2,41 +2,21 @@ class Svector < Formula
   desc "Official SVECTOR AI CLI - Advanced conversational AI and language models"
   homepage "https://www.svector.co.in"
   url "https://registry.npmjs.org/svector-sdk/-/svector-sdk-1.0.1.tgz"
-  sha256 "9070808cab42f2d1afcb631cb0c56066443e77c4cf26bce01b04d73e350b2941"
+  sha256 "7237e814bfa5c04bbf0ba96433e111d50572a092"
   license "MIT"
   version "1.0.1"
 
   depends_on "node"
 
   def install
-    # Extract the tarball
-    system "tar", "-xzf", cached_download
-
-    # Find the package directory
-    package_dir = Dir.glob("package").first
-
-    if package_dir.nil?
-      odie "Could not find package directory in tarball"
-    end
-
-    cd package_dir
-
-    # Install npm dependencies
-    system "npm", "install", "--production"
-
-    # Install to prefix
-    libexec.install Dir["*"]
-
-    # Make the CLI available globally by installing just what we need
-    # Copy svector-sdk module to a local location
-    (lib/"node_modules").mkpath
-    (lib/"node_modules").install libexec => "svector-sdk"
+    # Install the npm package globally
+    system "npm", "install", "-g", "svector-sdk@1.0.1"
 
     # Create the CLI wrapper script
     (bin/"svector").write <<~EOS
       #!/usr/bin/env node
 
-      const { SVECTOR } = require('#{lib}/node_modules/svector-sdk');
+      const { SVECTOR } = require('svector-sdk');
       const fs = require('fs');
       const path = require('path');
       const os = require('os');
