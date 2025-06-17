@@ -1,10 +1,10 @@
 class Svector < Formula
   desc "Official SVECTOR AI CLI - Advanced conversational AI and language models"
   homepage "https://www.svector.co.in"
-  url "https://registry.npmjs.org/svector-sdk/-/svector-sdk-1.0.1.tgz"
-  sha256 "9070808cab42f2d1afcb631cb0c56066443e77c4cf26bce01b04d73e350b2941"
+  url "https://registry.npmjs.org/svector-sdk/-/svector-sdk-1.0.3.tgz"
+  sha256 "d57600921fbaac29443d022d73bceaf360d20c67eaeab6343bfa733c3b090d63"
   license "MIT"
-  version "1.0.1"
+  version "1.0.3"
 
   depends_on "node"
 
