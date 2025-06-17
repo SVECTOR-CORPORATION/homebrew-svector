@@ -6,7 +6,7 @@ Official Homebrew tap for SVECTOR AI tools.
 
 ```bash
 # Add the tap
-brew tap svector-corporation/svector
+brew tap svector-corporation/tap
 
 # Install SVECTOR CLI
 brew install svector

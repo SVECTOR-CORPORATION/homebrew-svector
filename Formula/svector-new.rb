@@ -140,7 +140,7 @@ class Svector < Formula
               process.exit(1);
             }
 
-            console.log('🤖 SVECTOR AI Response:');
+            console.log('SVECTOR AI Response:');
             const response = await client.chat.create({
               model: 'spec-3-turbo:latest',
               messages: [{ role: 'user', content: message }],
