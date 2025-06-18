@@ -1,78 +1,190 @@
-# SVECTOR Homebrew Tap
+# 🍺 SVECTOR Homebrew Tap
 
-Official Homebrew tap for SVECTOR AI CLI tools.
+Official Homebrew tap for installing the SVECTOR AI CLI globally on macOS.
 
-## About SVECTOR
+[![Homebrew](https://img.shields.io/badge/Homebrew-Ready-orange.svg)](https://brew.sh)
+[![Version](https://img.shields.io/badge/Version-1.1.3-blue.svg)](https://github.com/SVECTOR-CORPORATION/homebrew-svector)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**SVECTOR** is a technology-driven organization focused on AI, Mathematics, and Computational research, developing cutting-edge language models including:
-
-- **Spec-3**, **Spec-3-Turbo**, **Spec-3.5** - Advanced reasoning models
-- **Theta-35**, **Theta-35-Mini** - Large-scale enterprise models  
-- **Mathematical Reasoning Systems** - Next-gen computational frameworks
-- **Spec Chat** - Web interface at [spec-chat.tech](https://spec-chat.tech)
-
-This CLI provides command-line access to SVECTOR's AI models for developers, automation, and application integration.
-
-## Installation
+## 🚀 Quick Installation
 
 ```bash
-# Add the tap
+# Add the SVECTOR tap
 brew tap svector-corporation/svector
 
 # Install SVECTOR CLI
 brew install svector
 ```
 
-## Quick Start
+## 📦 What's Included
+
+The SVECTOR CLI provides:
+
+- **🤖 Chat Commands** - Direct conversation with SVECTOR AI models
+- **🌊 Streaming Support** - Real-time response streaming
+- **📋 Model Management** - List and select from available models
+- **⚙️ Configuration** - Easy API key management
+- **🔄 Auto-updates** - Stay current with latest features
+
+## 🛠️ Usage
+
+### First Time Setup
 
 ```bash
-# Set your SVECTOR API key
-svector config set-key your-api-key-here
-
-# Use SVECTOR's models
-svector chat "Hello, how are you?" --model spec-3-turbo:latest
-
-# Stream responses in real-time
-svector stream "Explain quantum computing" --model theta-35:latest
-
-# List all available SVECTOR models
-svector models
+# Set your SVECTOR API key (get one from https://platform.svector.co.in)
+svector config set-key YOUR_API_KEY_HERE
 ```
 
-## SVECTOR's AI Models
+### Basic Commands
 
-Access SVECTOR's cutting-edge AI models via command line:
+```bash
+# Simple chat
+svector chat "Hello, what is artificial intelligence?"
 
-### Available Models:
-- **`spec-3-turbo:latest`** - High-performance general-purpose model
-- **`spec-3:latest`** - Advanced reasoning model for complex tasks
-- **`spec-3.5:latest`** - Next-generation model with enhanced capabilities (coming soon)
-- **`theta-35:latest`** - Large-scale model for enterprise applications  
-- **`theta-35-mini:latest`** - Efficient model optimized for performance
+# Streaming response (real-time)
+svector stream "Tell me a story about the future of AI"
 
-### CLI Features
+# List available models
+svector models
 
-- **Advanced AI Models**: Access to SVECTOR's state-of-the-art language models
-- **Real-time Streaming**: Get responses as they're generated
-- **Easy Configuration**: Simple setup and API key management
-- **Cross-platform**: Works on macOS, Linux, and Windows
-- **Developer-friendly**: Perfect for automation and scripting
+# Show current configuration
+svector config show
 
-### Commands
+# Help and usage
+svector --help
+```
 
-- `svector chat <message>` - Send a chat message
-- `svector stream <message>` - Stream a response in real-time
-- `svector models` - List available models
-- `svector config set-key <key>` - Set your API key
-- `svector config show` - Show current configuration
+### Advanced Usage
 
-## Support
+```bash
+# Chat with specific model
+svector chat "Explain quantum computing" --model spec-3-turbo:latest
 
-- **Website**: https://www.svector.co.in
-- **Documentation**: https://platform.svector.co.in
-- **Support**: support@svector.co.in
-- **Issues**: https://github.com/svector-corporation/homebrew-svector/issues
+# Stream with temperature control
+svector stream "Write a poem" --temperature 0.8
 
-## License
+# Chat with file context
+svector chat "Summarize this document" --file /path/to/document.pdf
 
-MIT License - see LICENSE file for details.
+# Set max tokens
+svector chat "Brief explanation" --max-tokens 100
+```
+
+## 🔧 Configuration
+
+SVECTOR CLI stores configuration in `~/.svector/config.json`:
+
+```json
+{
+  "apiKey": "your-api-key",
+  "defaultModel": "spec-3-turbo:latest",
+  "maxTokens": 150,
+  "temperature": 0.7
+}
+```
+
+## 📚 Models Available
+
+- **spec-3-turbo:latest** - Fast, efficient for most tasks
+- **spec-3:latest** - High-quality responses
+- **theta-35:latest** - Advanced reasoning and analysis
+- **theta-35-mini:latest** - Lightweight, fast responses
+
+## 🔄 Updates
+
+Update to the latest version:
+
+```bash
+brew update
+brew upgrade svector
+```
+
+## 🗑️ Uninstall
+
+```bash
+brew uninstall svector
+brew untap svector-corporation/svector
+```
+
+## 📝 Examples
+
+### Creative Writing
+```bash
+svector stream "Write a short story about a robot learning to paint"
+```
+
+### Code Help
+```bash
+svector chat "Explain this TypeScript code: async function fetchData() { ... }"
+```
+
+### Research Assistant
+```bash
+svector chat "What are the latest developments in renewable energy?"
+```
+
+### Interactive Learning
+```bash
+svector stream "Teach me about quantum physics, step by step"
+```
+
+## 🛡️ Environment Variables
+
+You can also set configuration via environment variables:
+
+```bash
+export SVECTOR_API_KEY="your-api-key"
+export SVECTOR_MODEL="spec-3-turbo:latest"
+export SVECTOR_MAX_TOKENS="200"
+export SVECTOR_TEMPERATURE="0.7"
+```
+
+## 🐛 Troubleshooting
+
+### API Key Issues
+```bash
+# Check current configuration
+svector config show
+
+# Reset API key
+svector config set-key NEW_API_KEY
+```
+
+### Connection Issues
+```bash
+# Test connectivity
+svector chat "test"
+
+# Check your API key at https://platform.svector.co.in
+```
+
+### Formula Issues
+```bash
+# Reinstall formula
+brew uninstall svector
+brew install svector
+
+# Update tap
+brew tap --repair svector-corporation/svector
+```
+
+## 🔗 Links
+
+- **🌐 SVECTOR Website**: https://www.svector.co.in
+- **📖 API Documentation**: https://platform.svector.co.in
+- **💬 Support**: support@svector.co.in
+- **🐛 Issues**: https://github.com/SVECTOR-CORPORATION/homebrew-svector/issues
+- **📦 npm Package**: https://www.npmjs.com/package/svector-sdk
+- **🐍 Python SDK**: https://pypi.org/project/svector-sdk/
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🏢 About SVECTOR
+
+SVECTOR is a technology-driven organization focused on AI, Mathematics, and Computational research, developing high-performance AI models, mathematical reasoning systems, and next-gen automation.
+
+---
+
+**Made with ❤️ by the SVECTOR Team**
