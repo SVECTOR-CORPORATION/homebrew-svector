@@ -1,4 +1,4 @@
-# 🍺 SVECTOR Homebrew Tap
+# 🍺 Spec Chat CLI Homebrew (Experimental)
 
 Official Homebrew tap for installing the SVECTOR AI CLI globally on macOS.
 
