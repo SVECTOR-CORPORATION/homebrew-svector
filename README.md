@@ -1,6 +1,17 @@
 # SVECTOR Homebrew Tap
 
-Official Homebrew tap for SVECTOR AI tools.
+Official Homebrew tap for SVECTOR AI CLI tools.
+
+## About SVECTOR
+
+**SVECTOR** is a technology-driven organization focused on AI, Mathematics, and Computational research, developing cutting-edge language models including:
+
+- **Spec-3**, **Spec-3-Turbo**, **Spec-3.5** - Advanced reasoning models
+- **Theta-35**, **Theta-35-Mini** - Large-scale enterprise models  
+- **Mathematical Reasoning Systems** - Next-gen computational frameworks
+- **Spec Chat** - Web interface at [spec-chat.tech](https://spec-chat.tech)
+
+This CLI provides command-line access to SVECTOR's AI models for developers, automation, and application integration.
 
 ## Installation
 
@@ -15,24 +26,31 @@ brew install svector
 ## Quick Start
 
 ```bash
-# Set your API key
+# Set your SVECTOR API key
 svector config set-key your-api-key-here
 
-# Start chatting
-svector chat "Hello, how are you?"
+# Use SVECTOR's models
+svector chat "Hello, how are you?" --model spec-3-turbo:latest
 
-# Stream responses
-svector stream "Tell me about artificial intelligence"
+# Stream responses in real-time
+svector stream "Explain quantum computing" --model theta-35:latest
 
-# List available models
+# List all available SVECTOR models
 svector models
 ```
 
-## What is SVECTOR?
+## SVECTOR's AI Models
 
-SVECTOR is an advanced AI platform providing cutting-edge conversational AI and language models. Our CLI tool brings the power of SVECTOR AI directly to your terminal.
+Access SVECTOR's cutting-edge AI models via command line:
 
-### Features
+### Available Models:
+- **`spec-3-turbo:latest`** - High-performance general-purpose model
+- **`spec-3:latest`** - Advanced reasoning model for complex tasks
+- **`spec-3.5:latest`** - Next-generation model with enhanced capabilities (coming soon)
+- **`theta-35:latest`** - Large-scale model for enterprise applications  
+- **`theta-35-mini:latest`** - Efficient model optimized for performance
+
+### CLI Features
 
 - **Advanced AI Models**: Access to SVECTOR's state-of-the-art language models
 - **Real-time Streaming**: Get responses as they're generated
@@ -51,7 +69,7 @@ SVECTOR is an advanced AI platform providing cutting-edge conversational AI and 
 ## Support
 
 - **Website**: https://www.svector.co.in
-- **Documentation**: https://www.svector.co.in/docs
+- **Documentation**: https://platform.svector.co.in
 - **Support**: support@svector.co.in
 - **Issues**: https://github.com/svector-corporation/homebrew-svector/issues
 

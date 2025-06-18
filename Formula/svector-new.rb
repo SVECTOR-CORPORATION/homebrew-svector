@@ -56,7 +56,7 @@ class Svector < Formula
       // Show help
       function showHelp() {
         console.log(`
-      🚀 SVECTOR CLI - Official AI command line interface
+      SVECTOR CLI - Official AI command line interface
 
       USAGE:
         svector <command> [options]
@@ -97,14 +97,14 @@ class Svector < Formula
           if (subcommand === 'set-key') {
             const apiKey = args[2];
             if (!apiKey) {
-              console.error('❌ Please provide an API key');
+              console.error('Please provide an API key');
               console.log('Usage: svector config set-key <your-api-key>');
               process.exit(1);
             }
 
             config.apiKey = apiKey;
             saveConfig(config);
-            console.log('✅ API key saved successfully');
+            console.log('API key saved successfully');
             return;
           }
 
@@ -114,13 +114,13 @@ class Svector < Formula
             return;
           }
 
-          console.error('❌ Unknown config command. Use: set-key or show');
+          console.error('Unknown config command. Use: set-key or show');
           return;
         }
 
         // Check for API key
         if (!config.apiKey) {
-          console.error('❌ No API key configured');
+          console.error('No API key configured');
           console.log('Please set your API key first:');
           console.log('  svector config set-key <your-api-key>');
           process.exit(1);
@@ -135,7 +135,7 @@ class Svector < Formula
           if (command === 'chat') {
             const message = args.slice(1).join(' ');
             if (!message) {
-              console.error('❌ Please provide a message');
+              console.error('Please provide a message');
               console.log('Usage: svector chat <your-message>');
               process.exit(1);
             }
@@ -151,12 +151,12 @@ class Svector < Formula
           } else if (command === 'stream') {
             const message = args.slice(1).join(' ');
             if (!message) {
-              console.error('❌ Please provide a message');
+              console.error('Please provide a message');
               console.log('Usage: svector stream <your-message>');
               process.exit(1);
             }
 
-            console.log('🌊 SVECTOR AI Streaming Response:');
+            console.log(' SVECTOR AI Streaming Response:');
             const stream = await client.chat.createStream({
               model: 'spec-3-turbo:latest',
               messages: [{ role: 'user', content: message }],
@@ -183,20 +183,20 @@ class Svector < Formula
             }
 
           } else {
-            console.error(`❌ Unknown command: ${command}`);
+            console.error(`Unknown command: ${command}`);
             console.log('Run "svector help" for usage information');
             process.exit(1);
           }
 
         } catch (error) {
-          console.error('❌ Error:', error.message);
+          console.error('Error:', error.message);
           process.exit(1);
         }
       }
 
       // Run the CLI
       main().catch((error) => {
-        console.error('❌ Unexpected error:', error.message);
+        console.error('Unexpected error:', error.message);
         process.exit(1);
       });
     EOS

@@ -79,12 +79,12 @@ brew install https://raw.githubusercontent.com/svector-corporation/homebrew-svec
 ## Formula Features
 
 The published formula includes:
-- ✅ Professional CLI interface
-- ✅ Automatic dependency management (Node.js)
-- ✅ Clean installation process
-- ✅ Proper error handling
-- ✅ Cross-platform compatibility (macOS, Linux)
-- ✅ Integration with SVECTOR AI API
+- Professional CLI interface
+- Automatic dependency management (Node.js)
+- Clean installation process
+- Proper error handling
+- Cross-platform compatibility (macOS, Linux)
+- Integration with SVECTOR AI API
 
 ## Testing Installation
 
